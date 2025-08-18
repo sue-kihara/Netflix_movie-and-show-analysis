@@ -151,6 +151,15 @@ ax.set_xlabel("Age Certification")
 ax.set_ylabel("Runtime (minutes)")
 st.pyplot(fig)
 
+# -------------------- Download Button --------------------
+st.subheader("⬇️ Download Dataset")
+csv = df.to_csv(index=False).encode('utf-8')
+st.download_button(
+    label="Download dataset as CSV",
+    data=csv,
+    file_name="Netflix TV Shows and Movies.csv",
+    mime="text/csv",
+)
 
 
 # --- Conclusion ---
